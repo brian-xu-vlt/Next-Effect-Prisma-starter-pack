@@ -1,0 +1,47 @@
+services:
+
+  postgres:
+    container_name: postgres_myapp
+    image: timescale/timescaledb:latest-pg15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  mailpit:
+    container_name: mailpit_app
+    image: axllent/mailpit
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+    restart: always
+
+  prisma-studio:
+    container_name: prisma-studio_app
+    image: timothyjmiller/prisma-studio:latest
+    restart: always
+    environment:
+      POSTGRES_URL: postgresql://postgres:postgres@postgres:5432/postgres
+    ports:
+      - 5555:5555
+
+  inngest:
+    container_name: inngest_app
+    network_mode: "host"
+    build:
+      context: .
+      dockerfile: Dockerfile.inngest
+    restart: always
+    ports:
+      - "8288:8288"
+    command: [ "npx", "inngest-cli", "dev", "-u", "http://localhost:3000/api/inngest"]
+
+
+volumes:
+  db_data: {}
+  tempo-data: {}
