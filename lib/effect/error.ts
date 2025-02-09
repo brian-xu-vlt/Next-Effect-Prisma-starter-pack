@@ -1,4 +1,3 @@
-
 import { Data, Effect } from 'effect'
 
 type ErrorType = Error | null | unknown
