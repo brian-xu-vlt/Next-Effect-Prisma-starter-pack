@@ -40,7 +40,7 @@ if (process.env.NEXT_RUNTIME !== 'edge') {
                         from: 'Me',
                         to: args.identifier,
                         subject: 'Login',
-                        html: args.url,
+                        html: `<a href="${args.url}">${args.url}</a>`,
                     }),
                 ),
                 Effect.provide(EmailTransportLayerLive),
