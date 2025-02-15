@@ -1,1 +1,1 @@
-export { auth as middleware } from 'auth'
+export { middleware } from 'modules/infrastructure/edge/middleware'

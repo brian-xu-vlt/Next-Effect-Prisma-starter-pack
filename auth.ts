@@ -7,11 +7,5 @@ const prisma = getPrisma()
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma),
-    callbacks: {
-        session: ({ session }) => {
-            console.log({ session })
-            return session
-        },
-    },
     ...authOptions,
 })
