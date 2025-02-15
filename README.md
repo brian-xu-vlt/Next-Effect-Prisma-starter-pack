@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A modern full-stack TypeScript starter template combining the power of Effect.ts for functional programming with Next.js, Next-Auth, and Prisma. Features type-safe database access, functional error handling, and built-in authentication.
+
+🚀 Key Features:
+- Effect.ts for robust error handling and dependency management
+- Next.js 14+ with App Router
+- Type-safe ORM with Prisma
+- Authentication ready with Next-Auth
+- Clean architecture structure
+- Full TypeScript support
 
 ## Getting Started
 
