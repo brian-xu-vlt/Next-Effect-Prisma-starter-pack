@@ -1,0 +1,20 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package.json and package-lock.json (if available)
+COPY package*.json ./
+
+# Install dependencies including Inngest CLI
+RUN npm install
+RUN npm install -g inngest-cli
+
+# Copy the rest of the application (node_modules is excluded via .dockerignore)
+COPY . .
+
+# Expose the port that Inngest runs on
+EXPOSE 8288
+
+# The command will be defined in docker-compose.yml
+CMD ["inngest-cli", "dev", "-u", "http://localhost:3000/api/inngest"]
+
