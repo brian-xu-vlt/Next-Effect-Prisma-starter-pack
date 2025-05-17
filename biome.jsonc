@@ -8,29 +8,17 @@
   "files": {
     "ignoreUnknown": false,
     "ignore": [
-      // generated files
       "node_modules",
-      "__generated__",
+      "package-lock.json",
       "build",
       "cjs",
       "coverage",
       "dist",
       "esm",
-      "firebase.json",
-      "fragmentTypes.json",
-      "graphqlTypeGuards.ts",
-      "ids.json",
       "lib",
-      "nexus-typings.ts",
-      "schema.graphql",
-      "scalarTypePolicies.ts",
-      "storybook-static",
-      "./types", // ./types and not just /types as we want to ignore the types folders generated when building packages but not types folder in the source code
       ".next",
       "next-env.d.ts",
-      "tsconfig.next.json",
-      // we want to keep these files as small as possible for network reasons
-      "public/assets/*.json"
+      "public/assets/**/*"
     ]
   },
   "formatter": {
