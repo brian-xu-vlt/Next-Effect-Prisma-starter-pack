@@ -288,7 +288,7 @@ const columns: ColumnDef<typeof schema.Type>[] = [
   {
     id: 'actions',
     cell: () => (
-      <div className="group-hover:opacity-100 opacity-0 transition-opacity duration-400">
+      <div className="group-hover/data-table-row:opacity-100 opacity-0 transition-opacity duration-400">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -323,7 +323,7 @@ function DraggableRow({ row }: { row: Row<typeof schema.Type> }) {
       data-state={row.getIsSelected() && 'selected'}
       data-dragging={isDragging}
       ref={setNodeRef}
-      className="group relative z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
+      className="group/data-table-row relative z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
       style={{
         transform: CSS.Transform.toString(transform),
         transition: transition,
