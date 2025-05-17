@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import {
   IconCreditCard,
@@ -6,40 +6,49 @@ import {
   IconLogout,
   IconNotification,
   IconUserCircle,
-} from "@tabler/icons-react"
+  IconSunMoon,
+  IconSun,
+  IconMoon,
+  IconDeviceLaptop,
+} from '@tabler/icons-react';
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "modules/components/ui/avatar"
+} from 'modules/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuPortal,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "modules/components/ui/dropdown-menu"
+} from 'modules/components/ui/dropdown-menu';
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "modules/components/ui/sidebar"
+} from 'modules/components/ui/sidebar';
+import { useTheme } from 'next-themes';
 
 export function NavUser({
   user,
 }: {
   user: {
-    name: string
-    email: string
-    avatar: string
-  }
+    name: string;
+    email: string;
+    avatar: string;
+  };
 }) {
-  const { isMobile } = useSidebar()
-
+  const { isMobile } = useSidebar();
+  const { setTheme, theme: currentTheme } = useTheme();
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -64,7 +73,7 @@ export function NavUser({
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
-            side={isMobile ? "bottom" : "right"}
+            side={isMobile ? 'bottom' : 'right'}
             align="end"
             sideOffset={4}
           >
@@ -96,6 +105,32 @@ export function NavUser({
                 <IconNotification />
                 Notifications
               </DropdownMenuItem>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>Set theme</DropdownMenuSubTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem
+                      disabled={currentTheme === 'light'}
+                      onClick={() => setTheme('light')}
+                    >
+                      <IconSun /> Light
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      disabled={currentTheme === 'dark'}
+                      onClick={() => setTheme('dark')}
+                    >
+                      <IconMoon /> Dark
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      disabled={currentTheme === 'system'}
+                      onClick={() => setTheme('system')}
+                    >
+                      <IconDeviceLaptop /> System
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuPortal>
+              </DropdownMenuSub>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
@@ -106,5 +141,5 @@ export function NavUser({
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  )
+  );
 }
