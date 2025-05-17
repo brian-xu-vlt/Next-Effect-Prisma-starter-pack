@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: localAdmin
       POSTGRES_PASSWORD: localAdmin
-      POSTGRES_DB: localAdmin
+      POSTGRES_DB: poc
     ports:
       - "5432:5432"
     volumes:
@@ -26,7 +26,7 @@ services:
     image: timothyjmiller/prisma-studio:latest
     restart: always
     environment:
-      POSTGRES_URL: postgresql://postgres:postgres@postgres:5432/postgres
+      POSTGRES_URL: postgresql://localAdmin:localAdmin@postgres:5432/poc
     ports:
       - 5555:5555
 
