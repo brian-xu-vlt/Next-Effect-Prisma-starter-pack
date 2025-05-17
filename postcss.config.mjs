@@ -1,7 +1,11 @@
 /** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: {
-    tailwindcss: {},
+    '@tailwindcss/postcss': {},
+    autoprefixer: {},
+    ...(process.env.NODE_ENV === 'production'
+      ? { cssnano: { preset: 'default' } }
+      : {}),
   },
 };
 
