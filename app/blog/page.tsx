@@ -1,20 +1,20 @@
-import { pipe, Effect } from 'effect'
-import { appRunPromise } from 'modules/infrastructure/runtime'
-import { UserManager, UserManagerLayerLive } from 'modules/domain/user-manager'
+import { Effect, pipe } from 'effect';
+import { UserManager, UserManagerLayerLive } from 'modules/domain/user-manager';
+import { appRunPromise } from 'modules/infrastructure/runtime';
 
 export default async function Blog() {
-    const users = await appRunPromise(
-        pipe(
-            UserManager,
-            Effect.andThen(_ => _.fetchAll()),
-            Effect.provide(UserManagerLayerLive),
-        ),
-    )
+  const users = await appRunPromise(
+    pipe(
+      UserManager,
+      Effect.andThen(_ => _.fetchAll()),
+      Effect.provide(UserManagerLayerLive),
+    ),
+  );
 
-    return (
-        <div>
-            <h1>Blog</h1>
-            <pre>{JSON.stringify(users, null, 2)}</pre>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Blog</h1>
+      <pre>{JSON.stringify(users, null, 2)}</pre>
+    </div>
+  );
 }

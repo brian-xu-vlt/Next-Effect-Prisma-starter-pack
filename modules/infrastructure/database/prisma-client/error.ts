@@ -1,6 +1,6 @@
-import { Data } from 'effect'
+import { Data } from 'effect';
 
 export class PrismaClientError extends Data.TaggedError('PrismaClientError')<{
-   error: Error
-   message: string
+  error: Error;
+  message: string;
 }> {}

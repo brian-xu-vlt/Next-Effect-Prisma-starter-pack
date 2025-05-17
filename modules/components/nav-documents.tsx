@@ -1,18 +1,18 @@
-"use client"
+'use client';
 
 import {
   FolderIcon,
+  type LucideIcon,
   MoreHorizontalIcon,
   ShareIcon,
-  type LucideIcon,
-} from "lucide-react"
+} from 'lucide-react';
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "modules/components/ui/dropdown-menu"
+} from 'modules/components/ui/dropdown-menu';
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -21,24 +21,24 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "modules/components/ui/sidebar"
+} from 'modules/components/ui/sidebar';
 
 export function NavDocuments({
   items,
 }: {
   items: {
-    name: string
-    url: string
-    icon: LucideIcon
-  }[]
+    name: string;
+    url: string;
+    icon: LucideIcon;
+  }[];
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile } = useSidebar();
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Documents</SidebarGroupLabel>
       <SidebarMenu>
-        {items.map((item) => (
+        {items.map(item => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
               <a href={item.url}>
@@ -58,8 +58,8 @@ export function NavDocuments({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="w-24 rounded-lg"
-                side={isMobile ? "bottom" : "right"}
-                align={isMobile ? "end" : "start"}
+                side={isMobile ? 'bottom' : 'right'}
+                align={isMobile ? 'end' : 'start'}
               >
                 <DropdownMenuItem>
                   <FolderIcon />
@@ -81,5 +81,5 @@ export function NavDocuments({
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroup>
-  )
+  );
 }

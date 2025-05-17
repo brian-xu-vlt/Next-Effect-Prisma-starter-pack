@@ -1,3 +1,3 @@
-import { EmailTransportLayer } from "modules/infrastructure/email-transport/main";
+import { EmailTransportLayer } from 'modules/infrastructure/email-transport/main';
 
-export const EmailTransportLayerLive = EmailTransportLayer
+export const EmailTransportLayerLive = EmailTransportLayer;

@@ -1,1 +1,1 @@
-export { middleware } from 'modules/infrastructure/edge/middleware'
+export { middleware } from 'modules/infrastructure/edge/middleware';

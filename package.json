@@ -70,8 +70,6 @@
     "typescript": "^5.8.3"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@prisma/client"
-    ]
+    "onlyBuiltDependencies": ["@prisma/client"]
   }
 }

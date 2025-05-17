@@ -1,3 +1,3 @@
-import { LoggerLayer } from 'modules/infrastructure/runtime/logger/main'
+import { LoggerLayer } from 'modules/infrastructure/runtime/logger/main';
 
-export const LoggerLayerLive = LoggerLayer
+export const LoggerLayerLive = LoggerLayer;

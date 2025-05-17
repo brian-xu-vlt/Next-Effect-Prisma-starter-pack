@@ -1,10 +1,10 @@
+import { Effect, pipe } from 'effect';
 import {
-    PrismaLayerLive,
-    Prisma,
-} from 'modules/infrastructure/database/prisma-client/layers/prisma'
-import { pipe, Effect } from 'effect'
+  Prisma,
+  PrismaLayerLive,
+} from 'modules/infrastructure/database/prisma-client/layers/prisma';
 
-export * from 'modules/infrastructure/database/prisma-client/live'
+export * from 'modules/infrastructure/database/prisma-client/live';
 
 export const getPrisma = () =>
-    pipe(Prisma, Effect.provide(PrismaLayerLive), Effect.runSync)
+  pipe(Prisma, Effect.provide(PrismaLayerLive), Effect.runSync);

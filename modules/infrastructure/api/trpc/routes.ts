@@ -1,6 +1,6 @@
-import { router } from 'modules/infrastructure/api/trpc/server'
+import { router } from 'modules/infrastructure/api/trpc/server';
 
 // routers go here
-export const AppRouter = router({})
+export const AppRouter = router({});
 
-export type AppRouter = typeof AppRouter
+export type AppRouter = typeof AppRouter;
