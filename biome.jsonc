@@ -1,0 +1,64 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": [
+      // generated files
+      "node_modules",
+      "__generated__",
+      "build",
+      "cjs",
+      "coverage",
+      "dist",
+      "esm",
+      "firebase.json",
+      "fragmentTypes.json",
+      "graphqlTypeGuards.ts",
+      "ids.json",
+      "lib",
+      "nexus-typings.ts",
+      "schema.graphql",
+      "scalarTypePolicies.ts",
+      "storybook-static",
+      "./types", // ./types and not just /types as we want to ignore the types folders generated when building packages but not types folder in the source code
+      ".next",
+      "next-env.d.ts",
+      "tsconfig.next.json",
+      // we want to keep these files as small as possible for network reasons
+      "public/assets/*.json"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "attributePosition": "auto"
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": false,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "arrowParentheses": "asNeeded"
+    },
+    "linter": {
+      "enabled": false
+    }
+  },
+  "css": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  }
+}
