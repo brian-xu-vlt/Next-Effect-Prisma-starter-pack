@@ -1,13 +1,5 @@
 import { auth } from 'auth';
 import { SignIn } from 'components/SignIn';
-import { Badge, TrendingUpIcon } from 'lucide-react';
-import {
-  Card,
-  CardHeader,
-  CardDescription,
-  CardTitle,
-  CardFooter,
-} from 'modules/components/ui/card';
 
 export default async function Home() {
   const session = await auth();
