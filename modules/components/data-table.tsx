@@ -105,6 +105,7 @@ import {
   TabsList,
   TabsTrigger,
 } from 'modules/components/ui/tabs';
+import { Slider } from './ui/slider';
 
 export const schema = Schema.Struct({
   id: Schema.Number,
@@ -215,6 +216,7 @@ const columns: ColumnDef<typeof schema.Type>[] = [
           });
         }}
       >
+        <Slider defaultValue={[Number(row.original.target)]} />
         <Label htmlFor={`${row.original.id}-target`} className="sr-only">
           Target
         </Label>
