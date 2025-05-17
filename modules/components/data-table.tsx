@@ -421,6 +421,7 @@ export function DataTable({
           <SelectContent>
             <SelectItem value="outline">Outline</SelectItem>
             <SelectItem value="past-performance">Past Performance</SelectItem>
+            <SelectItem value="XX">XX</SelectItem>
             <SelectItem value="key-personnel">Key Personnel</SelectItem>
             <SelectItem value="focus-documents">Focus Documents</SelectItem>
           </SelectContent>
@@ -429,6 +430,9 @@ export function DataTable({
           <TabsTrigger value="outline">Outline</TabsTrigger>
           <TabsTrigger value="past-performance">
             Past Performance <Badge variant="secondary">3</Badge>
+          </TabsTrigger>
+          <TabsTrigger value="XX">
+            XX <Badge variant="secondary">3</Badge>
           </TabsTrigger>
           <TabsTrigger value="key-personnel">
             Key Personnel <Badge variant="secondary">2</Badge>
@@ -610,18 +614,26 @@ export function DataTable({
       </TabsContent>
       <TabsContent
         value="past-performance"
-        className="flex flex-col px-4 lg:px-6"
+        className="flex flex-col px-4  lg:px-6"
       >
-        <div className="aspect-video w-full flex-1 rounded-lg border border-dashed"></div>
+        <div className="aspect-video max-h-60 w-full flex-1 rounded-lg border border-dashed"></div>
       </TabsContent>
-      <TabsContent value="key-personnel" className="flex flex-col px-4 lg:px-6">
-        <div className="aspect-video w-full flex-1 rounded-lg border border-dashed"></div>
+      <TabsContent value="XX" className="flex flex-col px-4  lg:px-6">
+        <div className="aspect-video border-red-500 max-h-60 w-full flex-1 rounded-lg border border-dashed">
+          XX
+        </div>
+      </TabsContent>
+      <TabsContent
+        value="key-personnel"
+        className="flex flex-col px-4  lg:px-6"
+      >
+        <div className="aspect-video max-h-60 w-full flex-1 rounded-lg border border-dashed"></div>
       </TabsContent>
       <TabsContent
         value="focus-documents"
-        className="flex flex-col px-4 lg:px-6"
+        className="flex flex-col px-4  lg:px-6"
       >
-        <div className="aspect-video w-full flex-1 rounded-lg border border-dashed"></div>
+        <div className="aspect-video max-h-60 w-full flex-1 rounded-lg border border-dashed"></div>
       </TabsContent>
     </Tabs>
   );
